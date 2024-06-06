@@ -1,0 +1,136 @@
+expertQ :-
+    write('Вы разбираетесь в роликовых коньках?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> budgetAbove50000 ; Response = 'нет' -> budgetBelow15000 ; throw('Неправильный ввод!')).
+
+budgetAbove50000 :-
+    write('Бюджет роликовых коньков может быть больше 50000?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> bladeChange ; Response = 'нет' -> intenseTraining ; throw('Неправильный ввод!')).
+
+bladeChange :-
+    write('Вы рассматриваете замену колёсиков?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> shining ; Response = 'нет' -> mirrorBlade ; throw('Неправильный ввод!')).
+
+shining :-
+    write('Вы любите стразы?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: ATEMI') ;
+    Response = 'нет' -> write('Вам рекомендуются к покупке следующие роликовые коньки: ACTION') ;
+    throw('Неправильный ввод!')).
+mirrorBlade :-
+    write('Вы рассматриваете у колёсиков покрытие для лучшего скольжения?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: HUDORA') ;
+    Response = 'нет' -> bladeStrength ;
+    throw('Неправильный ввод!')).
+
+bladeStrength :-
+    write('Вы рассматриваете роликовые коньки с упрочнением колёсиков путём добавления покрытия с углеродными наночастицами для большей прочности и устойчивости?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: ROADSHOW') ;
+    Response = 'нет' -> write('Вам рекомендуются к покупке следующие роликовые коньки: ROLLBAY') ;
+    throw('Неправильный ввод!')).
+
+intenseTraining :-
+    write('У вас достаточно интенсивная нагрузка?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> moreThan30h ;
+    Response = 'нет' -> trainee ;
+    throw('Неправильный ввод!')).
+
+moreThan30h :-
+    write('Вы тренируетесь больше 30 часов в неделю?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: ROCES') ;
+    Response = 'нет' -> write('Вам рекомендуются к покупке следующие роликовые коньки: ALPHA CAPRICE') ;
+    throw('Неправильный ввод!')).
+trainee :-
+    write('Вы тренер?'), nl,
+    read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: FILA SCATES') ;
+    Response = 'нет' -> iceDance ;
+    throw('Неправильный ввод!')).
+
+iceDance :-
+    write('Вы участвуете в танцах?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: TEMPISH') ;
+    Response = 'нет' -> write('Вам рекомендуются к покупке следующие роликовые коньки: PLAYLIFE') ;
+    throw('Неправильный ввод!')).
+
+budgetBelow15000 :-
+    write('Вы бы хотели найти роликовые коньки дешевле 15000?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> salaga ;
+    Response = 'нет' -> spins3rdComponent ;
+    throw('Неправильный ввод!')).
+
+salaga :-
+    write('Вы новичок?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> jumps ;
+    Response = 'нет' -> doubleJumps ;
+    throw('Неправильный ввод!')).
+jumps :-
+    write('Вы собираетесь изучать прыжки?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: LARSEN') ;
+    Response = 'нет' -> stepChoreography ;
+    throw('Неправильный ввод!')).
+
+stepChoreography :-
+    write('Вы собираетесь изучать дорожки?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: GROUND CONTROL') ;
+    Response = 'нет' -> write('Вам рекомендуются к покупке следующие роликовые коньки: GYRO') ;
+    throw('Неправильный ввод!')).
+
+doubleJumps :-
+    write('Вы умеете прыгать двойные прыжки?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: ROLLER DERBY') ;
+    Response = 'нет' -> write('Вам рекомендуются к покупке следующие роликовые коньки: ROLLER BLADGE') ;
+    throw('Неправильный ввод!')).
+
+spins3rdComponent :-
+    write('Вращения идут ниже 3го уровня компонентов?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> jumpsCombination ;
+    Response = 'нет' -> outdoorIce ;
+    throw('Неправильный ввод!')).
+jumpsCombination :-
+    write('Программа состоит из комбинаций прыжков?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> jumpsCombinationMoreThan2 ;
+    Response = 'нет' -> highSpeed ;
+    throw('Неправильный ввод!')).
+
+jumpsCombinationMoreThan2 :-
+    write('Прыжков в комбинации больше 3?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: TEEN TEAM') ;
+    Response = 'нет' -> write('Вам рекомендуются к покупке следующие роликовые коньки: HYPER') ;
+    throw('Неправильный ввод!')).
+
+highSpeed :-
+    write('У катающегося высокая скорость?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: KIZER') ;
+    Response = 'нет' -> write('Вам рекомендуются к покупке следующие роликовые коньки: FREESTYLE') ;
+    throw('Неправильный ввод!')).
+
+outdoorIce :-
+    write('Вы будете кататься на профессиональном покрытии?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: SEBA') ;
+    Response = 'нет' -> tripleJumps ;
+    throw('Неправильный ввод!')).
+
+tripleJumps :-
+    write('Вы прыгаете тройные прыжки?'), nl,
+    write('Ваш ответ: '), read(Response), nl,
+    (Response = 'да' -> write('Вам рекомендуются к покупке следующие роликовые коньки: FILA SKATES ARGON 84 2020') ;
+    Response = 'нет' -> write('Вам рекомендуются к покупке следующие роликовые коньки: POWERSLIDE') ;
+    throw('Неправильный ввод!')).
